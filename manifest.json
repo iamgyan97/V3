@@ -1,0 +1,17 @@
+{
+  "name": "Nepashya Foundation",
+  "short_name": "Nepashya",
+  "description": "Lighting Minds. Strengthening Communities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e8870a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
