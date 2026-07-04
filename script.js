@@ -9,21 +9,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealItems = document.querySelectorAll(".section, .card, .stat, .founder-box, .cta");
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
 
-  revealItems.forEach(item => {
-    item.classList.add("reveal");
-    observer.observe(item);
-  });
+    revealItems.forEach(item => {
+      item.classList.add("reveal");
+      observer.observe(item);
+    });
+  } else {
+    revealItems.forEach(item => item.classList.add("show"));
+  }
 
   const topBtn = document.createElement("button");
   topBtn.id = "topBtn";
@@ -77,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <button class="lightbox-close" aria-label="Close image">×</button>
       <img src="" alt="">
     `;
+
     document.body.appendChild(lightbox);
 
     const lightboxImg = lightbox.querySelector("img");
@@ -94,8 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
       lightbox.classList.remove("active");
     });
 
-    lightbox.addEventListener("click", e => {
-      if (e.target === lightbox) {
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        lightbox.classList.remove("active");
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
         lightbox.classList.remove("active");
       }
     });
