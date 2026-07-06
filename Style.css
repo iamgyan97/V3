@@ -549,3 +549,24 @@ body.dark h3{
     background:#fff7e8;
     color:#f28c00 !important;
 }
+.philosophy .card {
+  background: #ffffff !important;
+  color: #4b5563 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.philosophy .card h3 {
+  color: #12324a !important;
+  opacity: 1 !important;
+}
+
+.philosophy .card p {
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+
+.philosophy .card span {
+  background: #fff7e8 !important;
+  color: #f28c00 !important;
+}
