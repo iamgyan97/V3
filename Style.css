@@ -532,3 +532,20 @@ body.dark h3{
   background: #fff7e8;
   font-weight: 800;
 }
+/* Philosophy Cards */
+.philosophy .card{
+    background:#ffffff;
+}
+
+.philosophy .card h3{
+    color:#12324a !important;
+}
+
+.philosophy .card p{
+    color:#4b5563 !important;
+}
+
+.philosophy .card span{
+    background:#fff7e8;
+    color:#f28c00 !important;
+}
